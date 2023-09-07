@@ -1,5 +1,6 @@
 import random
 import math
+import statistics
 
 def SimulacionDias():
     r = random.random()
@@ -65,10 +66,22 @@ promedioDias = sum(dias)/len(dias)
 promedioLotes = sum(lotes)/len(lotes)
 promedioOnzas = sum(onzas)/len(onzas)
 
+desviacionEstandarDias = statistics.stdev(dias)
+
 print("***************************************************************************************")
 print("Primer Punto: \n")
 print(f"El valor esperado de los días que se demoran para completar el pedido es: {promedioDias}")
 print(f"Esto significa que deben prepararse para completar el pedido {promedioDias} antes\n")
 print(f"El valor esperado de los lotes que se toma para completar el pedido de 8000 onzas es: {promedioLotes}")
 print(f"El valor esperado de las onzas que se producen es : {promedioOnzas}")
+print("***************************************************************************************")
+print("Segundo Punto: \n")
+print(f"Primero calculamos la desviación estandar de los días: {desviacionEstandarDias}\n la precisión D será un porcentaje de 100*(1- alfa). alfa = 0.1, ya que tendremos 1 grado de libertad")
+print(f"El numero de simulaciones necesarias para callcularlo sale de la formula n = (Z**2 * D.S.**2)/D**2, Z =  6.3137 sale de la tabla de T-Student, y la desviación estandar la hemos calculado de sde la lista de días")
+n = ((6.3137**2 * desviacionEstandarDias**2)/99**2)
+print(n)
+print("***************************************************************************************")
+print("Tercer Punto:\n")
+print(f"Con base a la simulación, le recomiendo a Wozac empezar la fabricación del pedido {promedioDias + desviacionEstandarDias} antes de su fecha de eentrega.")
+print("esta es la cantidad de días (contando una demora de desviación estándar) con los que la empresa históricamente ha logrado completas pedidos de esta magnitud.")
 print("***************************************************************************************")

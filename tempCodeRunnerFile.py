@@ -1,1 +1,1 @@
-print(f"Valor real de la integral I = {round(I,3)}")
+(6.3137**2 * desviacionEstandarDias**2)/(100*(1-0.1))**2
