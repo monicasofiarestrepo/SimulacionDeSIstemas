@@ -30,17 +30,17 @@ for i in range(360):
     Pedido = M - inventario + defecit
     lti= LeadTime()
     tiempo = i + LeadTime()
-    print("******Punto 1: Simular 360 días********")
-    print(f"tiempo en días: {tiempo}")
-    print(f"Pedido: {Pedido}  Inventario: {inventario}")
-    print("**************")
-    
-  if i == tiempo:
+  
     demandaDia = Demanda()
     inventario += Pedido
     inventario -= demandaDia
-  if inventario < 0:
-    defecit += abs(inventario)
+    if demandaDia > inventario:
+      defecit += abs(demandaDia - inventario)
+
+    print("******Punto 1: Simular 360 días********")
+    print(f"tiempo en días: {tiempo}")
+    print(f"Pedido: {Pedido}  Inventario: {inventario}  Demanda {demandaDia} Defecit {defecit}")
+    print("**************")
 
 
 #   print(f"Pedido: {Pedido}  Inventario: {inventario} Defecit {defecit}")
