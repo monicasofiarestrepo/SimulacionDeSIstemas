@@ -1,1 +1,1 @@
-(6.3137**2 * desviacionEstandarDias**2)/(100*(1-0.1))**2
+  print(f"Pedido: {Pedido}  Inventario: {inventario} Defecit {defecit}")
