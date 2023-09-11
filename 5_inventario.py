@@ -39,7 +39,7 @@ for i in range(360):
 
     print("******Punto 1: Simular 360 días********")
     print(f"tiempo en días: {tiempo}")
-    print(f"Pedido: {Pedido}  Inventario: {inventario}  Demanda {demandaDia} Defecit {defecit}")
+    print(f"Pedido: {Pedido}  Inventario: {inventario}  Demanda: {demandaDia} Defecit: {defecit}")
     print("**************")
 
 
